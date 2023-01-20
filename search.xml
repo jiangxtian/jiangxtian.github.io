@@ -4,12 +4,43 @@
   
     
     <entry>
+      <title>生活脚步_01</title>
+      <link href="/2023/01/20/%E7%94%9F%E6%B4%BB%E8%84%9A%E6%AD%A5-01/"/>
+      <url>/2023/01/20/%E7%94%9F%E6%B4%BB%E8%84%9A%E6%AD%A5-01/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      <categories>
+          
+          <category> 生活 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 生活 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>正则表达式-day17</title>
       <link href="/2023/01/20/%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93-02/"/>
       <url>/2023/01/20/%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93-02/</url>
       
         <content type="html"><![CDATA[<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">System.out.println();</span><br><span class="line">System.out.println();</span><br><span class="line">System.out.println();</span><br><span class="line">System.out.println();</span><br><span class="line">System.out.println();</span><br></pre></td></tr></table></figure>]]></content>
       
+      
+      <categories>
+          
+          <category> 程序猿 </category>
+          
+      </categories>
       
       
         <tags>
@@ -29,6 +60,12 @@
       
         <content type="html"><![CDATA[<h2 id="Object"><a href="#Object" class="headerlink" title="Object"></a>Object</h2><ol><li>Object是 Java 中的顶级父类。<br>  所有的类都直接或间接的继承于object类。</li><li><code>toString():</code>一般会重写，打印对象时打印属性  </li><li><code>equals():</code>比较对象时会重写，比较对象属性值是否相同  </li><li><code>c1one():</code>默认浅克隆。<br>如果需要深克隆需要重写方法或者使用第三方工具类。</li></ol><h2 id="Objects"><a href="#Objects" class="headerlink" title="Objects"></a>Objects</h2><ol><li><p><code>Objects</code>是一个对象工具类，提供了一些操作对象的方法</p></li><li><p><code>equals(对象1 ，对象2)：</code>先做非空判断，比较两个对象</p></li><li><p><code>isNull(对象)</code>判断对象是否为空</p></li><li><p><code>nonNull(对象)</code>  判断对象是否不是空</p></li></ol><h2 id="BigInteger构造方法小结"><a href="#BigInteger构造方法小结" class="headerlink" title="BigInteger构造方法小结"></a>BigInteger构造方法小结</h2><ol><li>如果BigInteger表示的数字没有超出long的范围，可以用静态方法获取。    </li><li>如果BigInteger表示的超出long的范围，可以用构造方法获取。</li><li>对象一旦创建，BigInteger内部记录的值不能发生改变。</li><li>只要进行计算都会产生一个新的BigIntegerx对象</li></ol><h2 id="BigDecimall"><a href="#BigDecimall" class="headerlink" title="BigDecimall"></a>BigDecimall</h2><h3 id="BigDecimall的作用是什么？"><a href="#BigDecimall的作用是什么？" class="headerlink" title="BigDecimall的作用是什么？"></a>BigDecimall的作用是什么？</h3><ul><li>表示较大的小数和解决小数运算精度失真问题。</li></ul><h3 id="BigDecimal的对象如何获取？"><a href="#BigDecimal的对象如何获取？" class="headerlink" title="BigDecimal的对象如何获取？"></a>BigDecimal的对象如何获取？</h3><ul><li><code>BigDecimal bd1=new BigDecimal(&quot;较大的小数&quot;)；</code>  </li><li><code>BigDecimal bd2 BigDecimal.valueof(0.1);</code></li></ul><h3 id="常见操作"><a href="#常见操作" class="headerlink" title="常见操作"></a>常见操作</h3><ul><li>加：<code>add</code></li><li>减：<code>subtract</code></li><li>乘：<code>multiply</code></li><li>除：<code>divide(四舍五入：RoundingMode,HALF UP)</code></li></ul>]]></content>
       
+      
+      <categories>
+          
+          <category> 程序猿 </category>
+          
+      </categories>
       
       
         <tags>

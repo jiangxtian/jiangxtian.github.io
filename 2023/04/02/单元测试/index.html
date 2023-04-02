@@ -1,0 +1,318 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"><title>单元测试Junit | November 23rd</title><meta name="author" content="叫我大魔王"><meta name="copyright" content="叫我大魔王"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="ffffff"><meta name="description" content="1. 单元测试Junit1.1 什么是单元测试？（掌握）对部分代码进行测试。 1.2 Junit的特点？（掌握） 是一个第三方的工具。（把别人写的代码导入项目中）（专业叫法：导jar包）  如果运行结果显示绿色，表示运行结果是正确的。 如果运行结果显示红色，表示运行结果是错误的。   1.3 基本用法：（掌握）1，一定要先写一个方法。 2，在这个方法的上面写@Test 3，鼠标点一下@Test">
+<meta property="og:type" content="article">
+<meta property="og:title" content="单元测试Junit">
+<meta property="og:url" content="https://zandj.xyz/2023/04/02/%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/index.html">
+<meta property="og:site_name" content="November 23rd">
+<meta property="og:description" content="1. 单元测试Junit1.1 什么是单元测试？（掌握）对部分代码进行测试。 1.2 Junit的特点？（掌握） 是一个第三方的工具。（把别人写的代码导入项目中）（专业叫法：导jar包）  如果运行结果显示绿色，表示运行结果是正确的。 如果运行结果显示红色，表示运行结果是错误的。   1.3 基本用法：（掌握）1，一定要先写一个方法。 2，在这个方法的上面写@Test 3，鼠标点一下@Test">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://pic.imgdb.cn/item/63caf75fbe43e0d30eaad525.png">
+<meta property="article:published_time" content="2023-04-02T03:45:17.000Z">
+<meta property="article:modified_time" content="2023-04-02T11:47:45.157Z">
+<meta property="article:author" content="叫我大魔王">
+<meta property="article:tag" content="Java">
+<meta property="article:tag" content="Java个人总结">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://pic.imgdb.cn/item/63caf75fbe43e0d30eaad525.png"><link rel="shortcut icon" href="/img/avatar.jpg"><link rel="canonical" href="https://zandj.xyz/2023/04/02/%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: undefined,
+  noticeOutdate: {"limitDay":365,"position":"top","messagePrev":"It has been","messageNext":"days since the last update, the content of the article may be outdated."},
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: true,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: true,
+  }
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '单元测试Junit',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-04-02 19:47:45'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+    win.getCSS = url => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      link.onload = () => resolve()
+      link.onerror = () => reject()
+      document.head.appendChild(link)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', 'ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><script>const preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',()=> { preloader.endLoading() })
+
+if (true) {
+  document.addEventListener('pjax:send', () => { preloader.initLoading() })
+  document.addEventListener('pjax:complete', () => { preloader.endLoading() })
+}</script><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/avatar.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">68</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">6</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">4</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://pic.imgdb.cn/item/63caf75fbe43e0d30eaad525.png')"><nav id="nav"><span id="blog-info"><a href="/" title="November 23rd"><span class="site-name">November 23rd</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">单元测试Junit</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-04-02T03:45:17.000Z" title="发表于 2023-04-02 11:45:17">2023-04-02</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-04-02T11:47:45.157Z" title="更新于 2023-04-02 19:47:45">2023-04-02</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E7%A8%8B%E5%BA%8F%E7%8C%BF/">程序猿</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E7%A8%8B%E5%BA%8F%E7%8C%BF/Java%E5%9F%BA%E7%A1%80/">Java基础</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">1.2k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>4分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="单元测试Junit"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="1-单元测试Junit"><a href="#1-单元测试Junit" class="headerlink" title="1. 单元测试Junit"></a>1. 单元测试Junit</h1><h2 id="1-1-什么是单元测试？（掌握）"><a href="#1-1-什么是单元测试？（掌握）" class="headerlink" title="1.1 什么是单元测试？（掌握）"></a>1.1 什么是单元测试？（掌握）</h2><p>对部分代码进行测试。</p>
+<h2 id="1-2-Junit的特点？（掌握）"><a href="#1-2-Junit的特点？（掌握）" class="headerlink" title="1.2 Junit的特点？（掌握）"></a>1.2 Junit的特点？（掌握）</h2><ul>
+<li><p>是一个第三方的工具。（把别人写的代码导入项目中）（专业叫法：导jar包）</p>
+</li>
+<li><p>如果运行结果显示绿色，表示运行结果是正确的。</p>
+<p>如果运行结果显示红色，表示运行结果是错误的。</p>
+</li>
+</ul>
+<h2 id="1-3-基本用法：（掌握）"><a href="#1-3-基本用法：（掌握）" class="headerlink" title="1.3 基本用法：（掌握）"></a>1.3 基本用法：（掌握）</h2><p>1，一定要先写一个方法。</p>
+<p>2，在这个方法的上面写@Test</p>
+<p>3，鼠标点一下@Test  按alt + 回车，点击Junit4</p>
+<p>​	此时就可以自动导包。</p>
+<p>​	如果自动导包失败（连接外网，或者自己手动导包）</p>
+<p>​	如果导包成功在左下角就会出现Junit4的相关jar包</p>
+<h3 id="手动导包（掌握）"><a href="#手动导包（掌握）" class="headerlink" title="手动导包（掌握）"></a>手动导包（掌握）</h3><p>1，在当前模块下，右键新建一个文件夹（lib）</p>
+<p>2，把今天资料里面的两个jar包，拷贝到lib文件夹里面</p>
+<p>3，选中两个jar右键点击add as a lib….</p>
+<p>4，到代码中，找到@Test，按alt + 回车，再来导入。</p>
+<h3 id="运行测试代码（掌握）"><a href="#运行测试代码（掌握）" class="headerlink" title="运行测试代码（掌握）"></a>运行测试代码（掌握）</h3><ul>
+<li>只能直接运行无参无返回值的非静态方法</li>
+<li>想要运行谁，就右键点击哪个方法。如果想要运行一个类里面所有的测试方法，选择类名，有点点击即可。</li>
+</ul>
+<h3 id="Junit正确的打开方式（正确的使用方式）（掌握）"><a href="#Junit正确的打开方式（正确的使用方式）（掌握）" class="headerlink" title="Junit正确的打开方式（正确的使用方式）（掌握）"></a>Junit正确的打开方式（正确的使用方式）（掌握）</h3><p>注意点：并不是直接在要测试的方法上面直接加@Test</p>
+<p>原因：因为要测试的方法有可能是有参数的，有返回值，或者是静态的。</p>
+<h3 id="正确的使用方式：（掌握）"><a href="#正确的使用方式：（掌握）" class="headerlink" title="正确的使用方式：（掌握）"></a>正确的使用方式：（掌握）</h3><p>1，新建测试类</p>
+<p>2，新建测试方法（要测试的方法名 + Test） methodTest</p>
+<p>3，在这个方法中直接调用要测试的方法</p>
+<p>4，在测试方法的上面写@Test</p>
+<p>代码示例：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//真正用来测试的类</span></span><br><span class="line"><span class="comment">//测试用例（测试类）</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">JunitTest</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//在这个类里面再写无参无返回值的非静态方法</span></span><br><span class="line">    <span class="comment">//在方法中调用想要测试的方法</span></span><br><span class="line"></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">method2Test</span><span class="params">()</span>&#123;</span><br><span class="line">        <span class="comment">//调用要测试的方法</span></span><br><span class="line">        <span class="type">JunitDemo1</span> <span class="variable">jd</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">JunitDemo1</span>();</span><br><span class="line">        jd.method2(<span class="number">10</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="实际开发中单元测试的使用方式（掌握）"><a href="#实际开发中单元测试的使用方式（掌握）" class="headerlink" title="实际开发中单元测试的使用方式（掌握）"></a>实际开发中单元测试的使用方式（掌握）</h3><p>需求：测试File中的delete方法，写的是否正确（掌握）</p>
+<p>开发中的测试原则：</p>
+<p>不污染原数据。</p>
+<p>代码示例：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">JunitDemo3</span> &#123;</span><br><span class="line">    <span class="comment">//在实际开发中，真正完整的单元测试该怎么写？</span></span><br><span class="line">    <span class="comment">//前提：</span></span><br><span class="line">    <span class="comment">//以后在工作的时候，测试代码不能污染原数据。（修改，篡改）</span></span><br><span class="line">    <span class="comment">//1.利用Before去对数据做一个初始化的动作</span></span><br><span class="line">    <span class="comment">//2.利用Test真正的去测试方法</span></span><br><span class="line">    <span class="comment">//3.利用After去还原数据</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment">//需求：测试File类中的delete方法是否书写正确？？？</span></span><br><span class="line">    <span class="meta">@Before</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">beforemethod</span><span class="params">()</span> <span class="keyword">throws</span> IOException &#123;</span><br><span class="line">        <span class="comment">//先备份</span></span><br><span class="line">        <span class="type">File</span> <span class="variable">src</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">File</span>(<span class="string">&quot;C:\\Users\\moon\\Desktop\\a.txt&quot;</span>);</span><br><span class="line">        <span class="type">File</span> <span class="variable">dest</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">File</span>(<span class="string">&quot;C:\\Users\\moon\\Desktop\\copy.txt&quot;</span>);</span><br><span class="line"></span><br><span class="line">        <span class="type">FileInputStream</span> <span class="variable">fis</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">FileInputStream</span>(src);</span><br><span class="line">        <span class="type">FileOutputStream</span> <span class="variable">fos</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">FileOutputStream</span>(dest);</span><br><span class="line">        <span class="type">int</span> b;</span><br><span class="line">        <span class="keyword">while</span>((b = fis.read()) != -<span class="number">1</span>)&#123;</span><br><span class="line">            fos.write(b);</span><br><span class="line">        &#125;</span><br><span class="line">        fos.close();</span><br><span class="line">        fis.close();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//作为一个标准的测试人员，运行完单元测试之后，不能污染原数据</span></span><br><span class="line">    <span class="comment">//需要达到下面两个要求：</span></span><br><span class="line">    <span class="comment">//1.得到结果</span></span><br><span class="line">    <span class="comment">//2.a.txt还在而且其他的备份文件消失</span></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">method</span><span class="params">()</span>&#123;</span><br><span class="line">        <span class="type">File</span> <span class="variable">file</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">File</span>(<span class="string">&quot;C:\\Users\\moon\\Desktop\\a.txt&quot;</span>);</span><br><span class="line">        <span class="type">boolean</span> <span class="variable">delete</span> <span class="operator">=</span> file.delete();</span><br><span class="line"></span><br><span class="line">        <span class="comment">//检查a.txt是否存在</span></span><br><span class="line">        <span class="type">boolean</span> <span class="variable">exists</span> <span class="operator">=</span> file.exists();</span><br><span class="line"></span><br><span class="line">        <span class="comment">//只有同时满足了下面所有的断言，才表示delete方法编写正确</span></span><br><span class="line">        Assert.assertEquals(<span class="string">&quot;delete方法出错了&quot;</span>,delete,<span class="literal">true</span>);</span><br><span class="line">        Assert.assertEquals(<span class="string">&quot;delete方法出错了&quot;</span>,exists,<span class="literal">false</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="meta">@After</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">aftermethod</span><span class="params">()</span> <span class="keyword">throws</span> IOException &#123;</span><br><span class="line">        <span class="comment">//还要对a.txt做一个还原</span></span><br><span class="line">        <span class="type">File</span> <span class="variable">src</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">File</span>(<span class="string">&quot;C:\\Users\\moon\\Desktop\\copy.txt&quot;</span>);</span><br><span class="line">        <span class="type">File</span> <span class="variable">dest</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">File</span>(<span class="string">&quot;C:\\Users\\moon\\Desktop\\a.txt&quot;</span>);</span><br><span class="line"></span><br><span class="line">        <span class="type">FileInputStream</span> <span class="variable">fis</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">FileInputStream</span>(src);</span><br><span class="line">        <span class="type">FileOutputStream</span> <span class="variable">fos</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">FileOutputStream</span>(dest);</span><br><span class="line">        <span class="type">int</span> b;</span><br><span class="line">        <span class="keyword">while</span>((b = fis.read()) != -<span class="number">1</span>)&#123;</span><br><span class="line">            fos.write(b);</span><br><span class="line">        &#125;</span><br><span class="line">        fos.close();</span><br><span class="line">        fis.close();</span><br><span class="line"></span><br><span class="line">        <span class="comment">//备份数据要删除</span></span><br><span class="line">        src.delete();</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>作业：</p>
+<p>​	测试Properties类中的store方法是否书写正确？</p>
+<p>开发心得：</p>
+<p>1.Before  准备数据</p>
+<p>2.Test  测试方法</p>
+<p>3.After 还原</p>
+<p>Before</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">准备数据</span><br><span class="line"><span class="number">1.</span>创建Properties的对象</span><br><span class="line"><span class="number">2.</span>put数据到集合当中</span><br><span class="line"><span class="comment">//只不过在下面的方法中，我们也需要用到Properties的对象，所以写完之后要挪到成员位置</span></span><br></pre></td></tr></table></figure>
+
+<p>Test</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">调用store方法，保存数据到本地文件</span><br><span class="line"></span><br><span class="line">断言<span class="number">1</span>：</span><br><span class="line">	判断当前文件是否存在</span><br><span class="line">断言<span class="number">2</span>：</span><br><span class="line">	文件的大小一定是大于<span class="number">0</span></span><br><span class="line">断言<span class="number">3</span>：</span><br><span class="line">	再次读取文件中的数据，判断是否跟集合中一致</span><br><span class="line"></span><br><span class="line">结论：</span><br><span class="line">	如果所有的断言都通过了，表示store方法是正确的</span><br></pre></td></tr></table></figure>
+
+<p>After</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">把本地文件给删除</span><br></pre></td></tr></table></figure>
+
+<h3 id="扩展点："><a href="#扩展点：" class="headerlink" title="扩展点："></a>扩展点：</h3><p>在单元测试中，相对路径是相对当前模块而言的。</p>
+<p>代码示例：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">File</span> <span class="variable">file</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">File</span>(<span class="string">&quot;aweihaoshuai.txt&quot;</span>);</span><br><span class="line">file.createNewFile();</span><br><span class="line"><span class="comment">//此时是把aweihaoshuai.txt这个文件新建到模块中了。</span></span><br></pre></td></tr></table></figure>
+
+
+
+</article><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Java/">Java</a><a class="post-meta__tags" href="/tags/Java%E4%B8%AA%E4%BA%BA%E6%80%BB%E7%BB%93/">Java个人总结</a></div><div class="post_share"></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">叫我大魔王</div><div class="author-info__description">干我们这一行，开夜车是经常的事</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">68</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">6</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">4</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://qm.qq.com/cgi-bin/qm/qr?k=ZQjUMKEShYx9J04aGCG1ifbAcg6PtCLd&amp;noverify=0&amp;personal_qrcode_source=4"><i class="fab fa-qq"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">人间烟火，轻描淡写。云淡风轻，如花笑靥。</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95Junit"><span class="toc-number">1.</span> <span class="toc-text">1. 单元测试Junit</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-1-%E4%BB%80%E4%B9%88%E6%98%AF%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95%EF%BC%9F%EF%BC%88%E6%8E%8C%E6%8F%A1%EF%BC%89"><span class="toc-number">1.1.</span> <span class="toc-text">1.1 什么是单元测试？（掌握）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-2-Junit%E7%9A%84%E7%89%B9%E7%82%B9%EF%BC%9F%EF%BC%88%E6%8E%8C%E6%8F%A1%EF%BC%89"><span class="toc-number">1.2.</span> <span class="toc-text">1.2 Junit的特点？（掌握）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-3-%E5%9F%BA%E6%9C%AC%E7%94%A8%E6%B3%95%EF%BC%9A%EF%BC%88%E6%8E%8C%E6%8F%A1%EF%BC%89"><span class="toc-number">1.3.</span> <span class="toc-text">1.3 基本用法：（掌握）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%89%8B%E5%8A%A8%E5%AF%BC%E5%8C%85%EF%BC%88%E6%8E%8C%E6%8F%A1%EF%BC%89"><span class="toc-number">1.3.1.</span> <span class="toc-text">手动导包（掌握）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%90%E8%A1%8C%E6%B5%8B%E8%AF%95%E4%BB%A3%E7%A0%81%EF%BC%88%E6%8E%8C%E6%8F%A1%EF%BC%89"><span class="toc-number">1.3.2.</span> <span class="toc-text">运行测试代码（掌握）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Junit%E6%AD%A3%E7%A1%AE%E7%9A%84%E6%89%93%E5%BC%80%E6%96%B9%E5%BC%8F%EF%BC%88%E6%AD%A3%E7%A1%AE%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E5%BC%8F%EF%BC%89%EF%BC%88%E6%8E%8C%E6%8F%A1%EF%BC%89"><span class="toc-number">1.3.3.</span> <span class="toc-text">Junit正确的打开方式（正确的使用方式）（掌握）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%AD%A3%E7%A1%AE%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E5%BC%8F%EF%BC%9A%EF%BC%88%E6%8E%8C%E6%8F%A1%EF%BC%89"><span class="toc-number">1.3.4.</span> <span class="toc-text">正确的使用方式：（掌握）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E9%99%85%E5%BC%80%E5%8F%91%E4%B8%AD%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E5%BC%8F%EF%BC%88%E6%8E%8C%E6%8F%A1%EF%BC%89"><span class="toc-number">1.3.5.</span> <span class="toc-text">实际开发中单元测试的使用方式（掌握）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%89%A9%E5%B1%95%E7%82%B9%EF%BC%9A"><span class="toc-number">1.3.6.</span> <span class="toc-text">扩展点：</span></a></li></ol></li></ol></li></ol></div></div></div></div></main><footer id="footer" style="background: rgba(255,255,240,0.5)"><div id="footer-wrap"><div class="copyright">&copy;2023 By 叫我大魔王</div><div class="footer_custom_text">明天会更好！！!</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><script>function panguFn () {
+  if (typeof pangu === 'object') pangu.autoSpacingPage()
+  else {
+    getScript('https://cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js')
+      .then(() => {
+        pangu.autoSpacingPage()
+      })
+  }
+}
+
+function panguInit () {
+  if (false){
+    GLOBAL_CONFIG_SITE.isPost && panguFn()
+  } else {
+    panguFn()
+  }
+}
+
+document.addEventListener('DOMContentLoaded', panguInit)</script><script src="/js/search/local-search.js"></script><div class="js-pjax"></div><script defer="defer" id="ribbon" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-ribbon.min.js" size="130" alpha="0.6" zIndex="-1" mobile="false" data-click="false"></script><script defer="defer" id="fluttering_ribbon" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-fluttering-ribbon.min.js"></script><script id="canvas_nest" defer="defer" color="0,0,255" opacity="0.7" zIndex="-1" count="30" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-nest.min.js"></script><script id="click-heart" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/click-heart.min.js" async="async" mobile="true"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/metingjs/dist/Meting.min.js"></script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script><script>let pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+
+  // removeEventListener scroll 
+  window.tocScrollFn && window.removeEventListener('scroll', window.tocScrollFn)
+  window.scrollCollect && window.removeEventListener('scroll', scrollCollect)
+
+  document.getElementById('rightside').style.cssText = "opacity: ''; transform: ''"
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+
+  typeof disqusjs === 'object' && disqusjs.destroy()
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof chatBtnFn === 'function' && chatBtnFn()
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+})
+
+document.addEventListener('pjax:error', (e) => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
